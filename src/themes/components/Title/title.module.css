@@ -1,0 +1,29 @@
+.heading {
+  &:is(h1) {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: "lg";
+  }
+
+  &:is(h2) {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: "md";
+  }
+
+  &:is(h3) {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: "sm";
+  }
+
+  &:is(h5, h6) {
+    color: var(--mantine-color-dimmed);
+  }
+
+  &:is(p) {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: "xs";
+  }
+}

@@ -1,0 +1,7 @@
+.buttons {
+  &[data-variant="primary"] {
+    background: "#9662FB";
+    color: var(--mantine-color-white);
+    height: 46;
+  }
+}
