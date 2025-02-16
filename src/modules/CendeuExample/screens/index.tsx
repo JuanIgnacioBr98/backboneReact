@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  Container,
-} from "@mantine/core";
+import { Container } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { translate } from "../../../hooks/useTranslator";
 import { ICendeuPresenter } from "../core/presentation/ICendeuPresenter";
@@ -21,6 +19,10 @@ const CendeuScreen = () => {
 
   const cendeuTitleTab = "CENDEU | Accicom - Préstamos personales";
 
+  // *Estos View Handlers son muy practicos para establecer acciones 
+  // que se disparan cuando nuestra peticion al backend es exitosa o falló
+  // En estos ejemplos por ejemplo cuando hay error se llama a un toast con un mensaje de error (que está usando un traductor t)
+  // **/
   const viewHandlers: ICendeuScreen = {
     onProcessFileSuccess: function (): void {
       setLoading(false);
@@ -50,19 +52,22 @@ const CendeuScreen = () => {
     },
   };
 
+  //Con este useEffect cargamos nuestro presenter, el que se encargará de traer todas nuestras funciones que construimos
   useEffect(() => {
     document.title = cendeuTitleTab;
     setPresenter(presenterProvider.getPresenter(viewHandlers));
-    setLoaded(true);
+    setLoaded(true); // Indicamos que se cargaron los elementos necesarios para la pagina
   }, []);
 
   useEffect(() => {
     if (loaded) {
       setLoading(true);
+      //Aca podemos llamar a funciones generalmente encargadas de traer datos del backend, para eso usamos el presenter
       // presenter.getRegisters();
     }
   }, [loaded]);
 
+  //ABAJO NUESTROS ELEMENTOS QUE SE RENDERIZARAN EN LA PAGINA
   return (
     <Container fluid mx={"2rem"}>
       <h1>HOLA DESDE MODULO CENDEU</h1>

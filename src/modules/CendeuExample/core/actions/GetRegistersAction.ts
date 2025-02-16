@@ -1,5 +1,3 @@
-import { GetRegistersParams } from "../../../Leads/core/entities/GetRegistersParams";
-import { IResponsePaginatedRegister } from "../../../Leads/core/entities/IResponsePaginatedRegisters";
 import { ICendeuGateway } from "../gateways/ICendeuGateway";
 
 export interface IGetRegistersAction {
