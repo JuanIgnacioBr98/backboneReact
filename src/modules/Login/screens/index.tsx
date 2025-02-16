@@ -8,18 +8,9 @@ import { loginPresenterProvider } from "../infrastructure/presentation/presenter
 import { AuthContext } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { ROLES } from "../../../constants";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "../../../components/ui/card";
-import { Label } from "../../../components/ui/label";
-import { Input } from "../../../components/ui/input";
-import { Button } from "../../../components/ui/button";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
-import AccicomLogo from "../../../assets/images/accicomLogo";
 import { makeStyles } from "./styles";
+import { Button, Input, InputLabel } from "@mantine/core";
 
 type UserLogin = Pick<IUser, "email" | "password">;
 
@@ -104,21 +95,14 @@ const Login = () => {
     <>
       <div className="h-screen w-screen flex flex-col items-center justify-center">
         <div className="h-[80%] w-[80%] flex flex-col flex items-center justify-center p-4">
-          <Card className="w-full max-w-md border-2 border-blue-800 px-4">
-            <CardHeader>
-              <CardTitle className="text-center text-xl font-normal pt-8 pb-4">
-                {translator("login.login_title")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
               <form
                 onSubmit={form.onSubmit((values) => handleSubmit(values))}
                 className="space-y-6"
               >
                 <div className="space-y-2">
-                  <Label htmlFor="email">
+                  <label htmlFor="email">
                     {translator("login.email_label")}
-                  </Label>
+                  </label>
                   <Input
                     id="email"
                     type="email"
@@ -133,9 +117,9 @@ const Login = () => {
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="password">
+                  <InputLabel htmlFor="password">
                     {translator("login.password_label")}
-                  </Label>
+                  </InputLabel>
                   <div className="relative">
                     <Input
                       id="password"
@@ -182,10 +166,7 @@ const Login = () => {
                   </Button>
                 </div>
               </form>
-            </CardContent>
-          </Card>
           <div className="flex justify-center pt-20">
-            <AccicomLogo />
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { AppShell, Flex } from "@mantine/core";
-import Header from "../Header";
 
 const Layout = ({ children, showHeader = true }) => {
 
@@ -9,7 +8,6 @@ const Layout = ({ children, showHeader = true }) => {
     padding="md">
       {showHeader && (
         <AppShell.Header>
-          <Header />
         </AppShell.Header>
       )}
       <AppShell.Main>

@@ -7,10 +7,7 @@ export { multiLanguageModuleInitialize } from "./modules/multiLanguage/multiLang
 export { DependenciesContextProvider } from "./contexts/Dependencies";
 export { loginModuleInitialize } from "./modules/Login/loginModuleInitialize";
 export { httpClientModuleInitialize } from "./modules/httpClient/httpClientModule";
-export { manageParametersModuleInitialize } from "./modules/ManageParameters/manageParametersModuleInitialize";
-export { leadsModuleInitialize } from "./modules/Leads/leadsModuleInitialize";
-export { rucModuleInitialize } from "./modules/Ruc/rucModuleInitialize"; 
-export { cendeuModuleInitialize } from "./modules/Cendeu/cendeuModuleInitialize";
+export { cendeuModuleInitialize } from "./modules/CendeuExample/cendeuModuleInitialize";
 
 import Layout from "./components/Layout";
 

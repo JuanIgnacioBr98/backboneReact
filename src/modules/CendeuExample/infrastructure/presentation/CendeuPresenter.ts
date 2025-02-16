@@ -1,7 +1,6 @@
 import { IDownloadFileByNameAction } from "../../core/actions/DownloadFileByNameAction";
 import { IGetRegistersAction } from "../../core/actions/GetRegistersAction";
 import { IProcessFileAction } from "../../core/actions/ProcessFileAction";
-import { IUpdateFileStatusAction } from "../../core/actions/UpdateFileStatusAction";
 import { ICendeuPresenter } from "../../core/presentation/ICendeuPresenter";
 import { ICendeuScreen } from "../../core/screens/ICendeuScreen";
 import { IDownloadErrorFileAction } from "../../core/actions/DownloadErrorFileAction";
@@ -10,7 +9,6 @@ export const CendeuPresenter = (
   processFile: IProcessFileAction,
   getRegisters: IGetRegistersAction,
   downloadFileByName: IDownloadFileByNameAction,
-  updateFileStatusActionCendeu: IUpdateFileStatusAction,
   cendeuScreen: ICendeuScreen,
   downloadErrorFile: IDownloadErrorFileAction
 ): ICendeuPresenter => {
@@ -39,12 +37,6 @@ export const CendeuPresenter = (
       } catch (_) {
         cendeuScreen.onDownloadFileError();
       }
-    },
-    async updateFileStatus(fileName, status) {
-      updateFileStatusActionCendeu
-        .execute(fileName, status)
-        .then(cendeuScreen.updateStatusSuccess)
-        .catch(cendeuScreen.updateStatusError);
     },
     async downloadErrorFile(period, type) {
       try {

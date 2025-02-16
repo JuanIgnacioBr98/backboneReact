@@ -27,9 +27,6 @@ export const cendeuPresenterProvider = (): IPresenterProvider<
   const downloadErrorFileAction = useDependency(
     "cendeuDownloadErrorFileAction"
   ) as IDownloadErrorFileAction;
-  const updateFileStatusActionCendeu = useDependency(
-    "updateFileStatusActionCendeu"
-  ) as IUpdateFileStatusAction;
 
   return {
     getPresenter(viewHandlers) {
@@ -37,7 +34,6 @@ export const cendeuPresenterProvider = (): IPresenterProvider<
         processFileAction,
         getRegistersAction,
         downloadFileByNameAction,
-        updateFileStatusActionCendeu,
         viewHandlers,
         downloadErrorFileAction,
       );

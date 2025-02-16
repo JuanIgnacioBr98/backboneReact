@@ -15,9 +15,6 @@ const App = () => {
     app.multiLanguageModuleInitialize();
     app.httpClientModuleInitialize(dependencyManager);
     app.loginModuleInitialize(dependencyManager);
-    app.manageParametersModuleInitialize(dependencyManager);
-    app.leadsModuleInitialize(dependencyManager);
-    app.rucModuleInitialize(dependencyManager);
     app.cendeuModuleInitialize(dependencyManager);
     setIsLoaded(true);
   }, []);
