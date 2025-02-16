@@ -3,7 +3,7 @@ import { useState } from "react";
 export { useState };
 
 export { DependencyManager } from "./dependencyManager";
-export { multiLanguageModuleInitialize } from "./modules/multiLanguage/multiLanguageModule";
+export { multiLanguageModuleInitialize } from "./modules/MultiLanguage/multiLanguageModule"
 export { DependenciesContextProvider } from "./contexts/Dependencies";
 export { loginModuleInitialize } from "./modules/Login/loginModuleInitialize";
 export { httpClientModuleInitialize } from "./modules/httpClient/httpClientModule";

@@ -1,7 +1,6 @@
 import { Outlet, Route } from "react-router-dom";
 import React from "react";
 import Layout from "../components/Layout";
-import { ProtectedRoute } from "../components/ProtectedRoute";
 import CendeuScreen from '../modules/CendeuExample/screens/index';
 
 
@@ -11,11 +10,9 @@ export const routerRoutes = (
       <Route
         path="/"
         element={
-          <ProtectedRoute>
-            <Layout>
-              <CendeuScreen />
-            </Layout>
-          </ProtectedRoute>
+          <Layout>
+            <CendeuScreen />
+          </Layout>
         }
       />
 
